@@ -1,0 +1,647 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    color: white;
+    background: black;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: #F7F7F7;
+    font-family: "Helvetica Now Text", "Lucida Sans", Tahoma, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+button {
+    background: none !important;
+    border: none;
+}
+
+#cursor {
+    height: 250px;
+    width: 250px;
+    position: fixed;
+    background-color: blanchedalmond;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    /* transform: scale(0); */
+    cursor: grab;
+}
+
+
+/* -------------------NAVABAR------------------------ */
+
+.nav {
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    padding: 25px 15px 0 25px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.nav-part1 {
+    height: 83px;
+    overflow: hidden;
+}
+
+.nav-part1 svg {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* .nav-part1 svg:last-child{
+    margin-top: -10px;
+} */
+
+.nav .nav-part2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.nav-part2 .links a {
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 0 40px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    font-size: 12px;
+    color: #fff;
+}
+
+.nav-part2 .links a:nth-child(1)::after {
+    content: '';
+    position: absolute;
+    top: 24px;
+    right: 337px;
+    width: 30px;
+    height: 1px;
+    background: #fff;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-part2 .links a:nth-child(2)::after {
+    content: '';
+    position: absolute;
+    top: 24px;
+    right: 177px;
+    width: 75px;
+    height: 1px;
+    background: #fff;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-part2 .links a:nth-child(3)::after {
+    content: '';
+    position: absolute;
+    top: 24px;
+    right: 40px;
+    width: 50px;
+    height: 1px;
+    background: #fff;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-part2 .links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.nav-part2 .links a:hover {
+    opacity: 0.5;
+}
+
+.nav-part2 .icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #F7F7F7;
+    padding: 0 5px;
+    border-radius: 20px;
+    gap: 40px;
+}
+
+.nav-part2 button {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-part2 .menu-btn .btn-lines {
+    width: 18px;
+    height: 6px;
+    position: relative;
+}
+
+.nav-part2 .menu-btn .btn-lines span {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #000;
+    top: 0px;
+    left: 0px;
+    transition: top 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.nav-part2 .menu-btn .btn-lines:hover span {
+    transform: translateY(1px) scaleX(1.1);
+}
+
+.nav-part2 .menu-btn .btn-lines span:last-child {
+    top: 100%;
+}
+
+.nav-part2 .icons .menu-btn:hover,
+.nav-part2 .icons .cart-btn:hover {
+    cursor: pointer;
+}
+
+.nav-part2 .icons .cart-btn svg:hover {
+    transform: rotate(-5deg);
+}
+
+
+
+/* -------------------START OF PAGE 1------------------------ */
+
+#page1 {
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+    /* padding: 0 1vw; */
+    /* padding-top: 20vh; */
+}
+#page1 .main-component{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+#page1 .main-component video{
+    width: 100%;
+}
+
+#page1 .main-component .main-heading{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: baseline;
+    text-align: left;
+    padding: 0 1vw;
+    overflow: hidden;
+}
+
+#page1 .main-component #load-anime2{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+#page1 .main-component #load-anime1 h1,
+#page1 .main-component #load-anime2 h1{
+    font-size: 16.2vw;
+    line-height: 14vw;
+    text-transform: uppercase;
+    font-family: futura;
+    text-align: right;
+    letter-spacing: -15px;
+    color: #fff;
+}
+
+#page1 .main-component #load-anime1 h1{
+    animation: headingAnimation 400ms;
+}
+#page1 .main-component #load-anime2 h1:nth-child(1){
+    animation: headingAnimation 600ms;
+}
+#page1 .main-component #load-anime2 h1:nth-child(2){
+    animation: headingAnimation 800ms;
+}
+
+
+@keyframes headingAnimation {
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes headingRightAnimation {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+#page1 .main-component #load-anime3{
+    position: absolute;
+    top: 64%;
+    left: 70vw;
+    animation: headingRightAnimation 400ms;
+}
+
+#page1 .main-component #load-anime3 p{
+    font-size: 1.5vw;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: 0.1em;
+}
+
+#button-container {
+    height: 100vh;
+    width: 100%;
+    /* background: gray; */
+    position: relative;
+    margin-top: 1vw;
+}
+
+#button-container a {
+    position: absolute;
+    top: 15%;
+    right: 27%;
+}
+
+
+#button-container a span {
+    position: absolute;
+    top: 38%;
+    right: 27%;
+    font-family: futura;
+    font-size: 2vw;
+    color: #000000;
+    font-weight: 400;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#button-container a svg {
+    animation-name: spin;
+    animation: spin 10s linear infinite;
+}
+
+
+#button-container #play {
+    padding: 3vw 2.2vw;
+    background-color: #000000;
+    color: white;
+    font-size: 1.3vw;
+    position: fixed;
+    border-radius: 50%;
+    text-transform: uppercase;
+    font-family: futura;
+    opacity: 0;
+    scale: 0;
+}
+
+/* -------------------END OF PAGE 1------------------------ */
+
+#sep {
+    padding: 0 1vw;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Helvetica Now Text", "Lucida Sans", Tahoma, sans-serif;
+}
+
+#sep span {
+    grid-column: span 1;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+#seperator {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    height: 1px;
+    background: #000;
+    margin-bottom: 15px;
+}
+
+
+/* -------------------START OF PAGE 2------------------------ */
+
+#page2 {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding: 3vw 1vw;
+}
+
+.main-cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#page2 .elem {
+    height: 100%;
+    width: 31%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page2 .elem img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    scale: 1.1;
+}
+
+#page2 .elem .dets {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2vw;
+    height: 60px;
+    width: 60%;
+    border-radius: 50px;
+    position: absolute;
+    background: #F5DFCF;
+    z-index: 9;
+    font-family: "Helvetica Now Text", "Lucida Sans", Tahoma, sans-serif;
+    letter-spacing: 0.06em;
+    line-height: 0.9em;
+    font-size: 0.7vw;
+    transition: height 0.5s;
+    -webkit-transition: height 0.5s;
+    overflow: hidden;
+    /* transition: 1.5s; */
+}
+
+#page2 .elem #dets1 {
+    background: #e5f0d6;
+}
+
+#page2 .elem #dets2 {
+    background: #F5DFCF;
+}
+
+#page2 .elem #dets3 {
+    background: #FFFFFF;
+}
+
+#page2 .elem .dets #shopname {
+    /* font-family: futura; */
+    font-weight: 700;
+}
+
+span#dot {
+    width: 8px;
+    height: 8px;
+    background: #000;
+    border-radius: 50%;
+}
+
+#page2 .elem .dets:hover {
+    /* height: 100px; */
+    cursor: pointer;
+}
+
+#page2 .main-cards .popup{
+    display: block;
+    /* justify-content: center; */
+    /* align-items: center; */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    transform: translate(50%, 50%);
+    background: #000006;
+    width: 200px;
+    height: 200px;
+    z-index: 9999;
+
+}
+
+/* -------------------START OF PAGE 3------------------------ */
+
+
+#page3 {
+    min-height: 120vh;
+    width: 100%;
+    position: relative;
+    padding: 3vw 1vw;
+}
+
+.prod-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.prod-content #headline {
+    text-align: left;
+    font-family: futura;
+    font-size: 56px;
+    max-width: 14em;
+    line-height: 1em;
+}
+
+.prod-content .content {
+    width: 35em;
+    float: right;
+}
+
+.prod-content .content p {
+    width: 27em;
+    margin-top: 0px;
+    margin-bottom: 32px;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+}
+
+.prod-content span.shop-btn a {
+    font-family: "ABC Social Mono", "Lucida Sans", Tahoma, nonospaced;
+    font-weight: 500;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 12px;
+    color: #000;
+    opacity: 0.7;
+    overflow: hidden;
+    transition: ease all 2ms;
+}
+
+.prod-content span.shop-btn a::after {
+    content: '';
+    position: absolute;
+    width: 110px;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background: #000;
+    transform: scaleX(1);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.prod-content span.shop-btn a:hover::after {
+    transform: scaleX(0);
+    transform-origin: bottom left;
+}
+
+.children {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.children .child {
+    height: 70vh;
+    width: 40vw;
+    /* background: red; */
+    position: relative;
+    margin: 5em 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.children .child:hover {
+    cursor: pointer;
+}
+
+.children .child img {
+    height: 100%;
+}
+
+.children .child p {
+    font-family: "Helvetica Now Text", "Lucida Sans", Tahoma, sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    font-weight: 300;
+    margin-top: 5.5em;
+}
+
+.children .child .product-price {
+    font-size: 0.625rem;
+    margin-top: 0.6em;
+}
+
+/* @media (max-width: 1080px){
+    .nav .nav-part2 .links{
+        display: none;
+    }
+} */
+
+@media (max-width: 600px) {
+
+    .nav .nav-part2 .links {
+        display: none;
+    }
+
+    #page1 {
+        min-height: 70vh;
+        width: 100%;
+        padding: 0 3vw;
+        padding-top: 25vh;
+    }
+
+    #page1 h1 {
+        font-size: 15.5vw;
+        /* text-align: center; */
+        letter-spacing: -3px;
+    }
+
+    #button-container {
+        height: fit-content;
+        margin-top: 3vw;
+    }
+
+    #button-container a {
+        width: 40%;
+        top: -60px;
+        right: 0;
+        justify-content: center;
+    }
+
+    #button-container a span {
+        font-size: 4vw;
+        top: 42%;
+        right: 63%;
+    }
+
+    #button-container a svg {
+        width: 50%;
+    }
+
+    #button-container img {
+        width: 100%;
+    }
+
+    #page2 {
+        min-height: 100vh;
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5vw 3vw;
+        justify-content: space-between;
+        /* background: #000; */
+    }
+
+    #page2 #sep {
+        gap: 16em;
+    }
+
+    #page2 .main-cards {
+        flex-direction: column;
+    }
+
+    #page2 .elem {
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 3vw;
+    }
+
+}
